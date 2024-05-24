@@ -1,4 +1,10 @@
+import { Source_Code_Pro } from 'next/font/google';
 import './global.css';
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-source-code-pro',
+});
 
 export const metadata = {
   title: 'Welcome to frontend',
@@ -11,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="ru" className={sourceCodePro.className}>
       <body>{children}</body>
     </html>
   );
