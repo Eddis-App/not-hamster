@@ -1,9 +1,15 @@
 import { Source_Code_Pro } from 'next/font/google';
+import localFont from 'next/font/local';
 import './global.css';
 
 const sourceCodePro = Source_Code_Pro({
   subsets: ['latin', 'cyrillic'],
   variable: '--font-source-code-pro',
+});
+
+const betterVCR = localFont({
+  src: '../../public/assets/font/Better VCR 6.1.ttf',
+  variable: '--font-better-vcr',
 });
 
 export const metadata = {
@@ -17,7 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={sourceCodePro.className}>
+    <html
+      lang="ru"
+      className={sourceCodePro.variable + ' ' + betterVCR.variable}
+    >
       <body>{children}</body>
     </html>
   );
